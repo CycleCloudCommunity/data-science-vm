@@ -105,46 +105,6 @@ Order = 20
         Description = The credentials for the cloud provider
         ParameterType = Cloud.Credentials
 
-    [[parameters Filesystem Configuration]]
-
-        [[[parameter FsConfigDesc]]]
-        HideLabel = true
-        Config.Plugin = pico.widget.HtmlTemplateWidget
-        Config.Template = "Configure the Filesystem options."
-
-        [[[parameter FilesystemSize]]]
-        Label = Size (GB)
-        Description = The filesystem size
-        DefaultValue = 100
-        Config.Plugin = pico.form.NumberTextBox
-        Config.MinValue = 10
-        Config.MaxValue = 10240
-        Config.IntegerOnly = true
-
-        [[[parameter FileSystemType]]]
-        Label = Format
-        DefaultValue = xfs
-        Config.Plugin = pico.form.Dropdown
-            [[[[list Config.Entries]]]]
-            Name = xfs
-            Label = xfs
-            [[[[list Config.Entries]]]]
-            Name = ext3
-            Label = ext3
-            [[[[list Config.Entries]]]]
-            Name = ext4
-            Label = ext4
-
-        [[[parameter FileSystemPersistence]]]
-            Label = Filesystem Persistence
-            DefaultValue = true
-            Config.Plugin = pico.form.RadioButtonsControl
-            [[[[list Config.Entries]]]]
-            Name = false
-            Label = Ephemeral
-            [[[[list Config.Entries]]]]
-            Name = true
-            Label = Persistent
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
